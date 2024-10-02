@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/index-styler.css">
+    <!-- For icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+    <!-- For fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <div id="container">
+        <div id="ved">
+            <div class="ved-inner">
+                <div class="ved-exit">
+                    <button id="ved-exit" type="button"><i class="fa fa-circle-xmark"></i></button>
+                </div>
+
+                <div id="ved-show">
+                    <!-- For displaying task details -->
+                </div>
+            </div>
+        </div>
+        <div class="dash-creator" id="dash-creator">
+            <div class="task-adder">
+                <div class="ta-exit">
+                    <button type="button" id="ta-exit-btn"><i class="fa-regular fa-circle-xmark"></i></button>
+                </div>
+                <div class="ta-head">
+                    Create New Task
+                </div>
+
+                <div class="task-inputs">
+                    <form method="post" action="/create-task">
+                        <label for="task-name"><span class="task-title">Task Title</span><br>
+                            <input type="text" class="task-input t-title" placeholder="Task Name" id="task-name" name="title">
+                        </label>
+
+                        <label for="task-date"><span class="task-title">Due Date:</span><br>
+                            <input type="datetime-local" class="task-input" id="task-name" name="duedate">
+                        </label>
+
+                        <label for="task-detail">
+                            <textarea type="text" class="task-area" placeholder="Task briefing" id="task-detail" name="detail"></textarea>
+                        </label>
+
+                        <label for="task-check">
+                        <div class="task-pri">
+                            <div>
+                                <span class="task-title">Priority:</span>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="task-input-check" id="task-check" name="priority">
+                            </div>
+                        </div>
+                        </label>
+
+                        <div class="task-btn">
+                            <button type="submit" class="t-btn">Create Task</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-nav">
+            <div class="t-l">
+                <div class="t-ll">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="t-rr">
+                    Pomo
+                </div>
+            </div>
+
+            <div class="t-r">
+                <button class="add_task" id="add_task" type="button">Add Task</button>
+
+                <div class="t-search">
+                    <input type="search" placeholder="Search tasks..." class="ts-search" id="ts-search">
+                    <button type="button" class="ts-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="split">
+            <div id="left">
+                <div class="filter">
+                    <div class="fil-head">
+                        Filters
+                    </div>
+
+                    <div class="fil-group">
+                        <div class="f-g">
+                            <div class="custom-check-cont">
+                                <input type="checkbox" class="cc prior" id="cc_one">
+                                <label for="cc_one" class="cc_label" id="cc_one"></label>
+                            </div>
+
+                            <div class="ccc-text">
+                                Priority
+                            </div>
+                        </div>
+
+                        <div class="f-g">
+                            <div class="custom-check-cont">
+                                <input type="checkbox" class="cc dueday" id="cc_two">
+                                <label for="cc_two" class="cc_label" id="cc_two"></label>
+                            </div>
+
+                            <div class="ccc-text">
+                                Due Today
+                            </div>
+                        </div>
+
+                        <div class="f-g">
+                            <div class="custom-check-cont">
+                                <input type="checkbox" class="cc checker" id="cc_three">
+                                <label for="cc_three" class="cc_label" id="cc_three"></label>
+                            </div>
+
+                            <div class="ccc-text">
+                                Completed
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sort">
+                    <div class="s-head">
+                        Sort By
+                    </div>
+                    <div class="sort-group">
+                        <div class="s-g">
+                            <input type="radio" class="sort-radio" id="sort_date"/>
+                            <div class="sg-text">
+                                Due date
+                            </div>
+                        </div>
+
+                        <div class="s-g">
+                            <input type="radio" class="sort-radio" id="sort_priority"/>
+                            <div class="sg-text">
+                                Priority
+                            </div>
+                        </div>
+
+                        <div class="s-g">
+                            <input type="radio" class="sort-radio" id="sort_c_date"/>
+                            <div class="sg-text">
+                                Creation Date
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="user-profile">
+                        <div class="user-image">
+                            <img src="" class="user-pic" alt="img not found"/> 
+                        </div>
+
+                        <div class="user-name">
+                            UserName
+                        </div>
+                    </div>
+                </div>      
+            </div>
+
+            <div id="right">
+                <div class="right-inner">
+                    <div class="right-head">
+                        My Tasks
+                    </div>
+
+                    <div id="tasks-row">
+                        
+                    </div>
+
+                    <div id="sorters">
+                        <div class="sl">
+                            <div class="la">
+                                Set your Due-date (for sort by function)
+                            </div>
+                    
+                            <div>
+                                <input type="datetime-local" class="dd"><br>
+
+                                <button type="submit" class="dd-btn">Sort</button>
+                            </div>
+                        </div>
+
+                        <div class="sr">
+                            <div class="la">
+                                Set your Creation date (for sort by function)
+                            </div>
+                            <div>
+                                <input type="datetime-local" class="tt"><br>
+
+                                <button type="submit" class="tt-btn">Sort</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <div class="bn">
+                <a href="/calendar"><button class="bn-btn"><i class="fa-solid fa-calendar-days"></i></i></button></a>
+            </div>
+
+            <div class="bn">
+                <a href="#"><button class="bn-btn"><i class="fa-solid fa-bell"></i></i></button></a>
+            </div>
+
+            <div class="bn">
+                <a href="#"><button class="bn-btn"><i class="fa-solid fa-gear"></i></i></button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript for dashboard functionalities link -->
+
+    <script src="/dashboard.js"></script>
+    <!-- <script src="/dashboard-routes.js"></script> -->
+</body>
+</html>
