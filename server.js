@@ -26,14 +26,14 @@ app.use(express.static(webpack_path)); //For my webpack files
 
 // Creating a session for my user
 app.use(session({
-    secret: process.env. xSESSION_SECRET || 'your-secret-key', // Add a secret key (use an environment variable for security)
+    secret: process.env. xSESSION_SECRET || 'sup33448!', 
     resave: false,
-    saveUninitialized: false, // Explicitly set to true or false
+    saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: 'mongodb://localhost:27017/Task_Manager',
+        mongoUrl: 'mongodb+srv://excellentayomide:excell@pomo.4swla.mongodb.net/Pomo',
         collectionName: 'sessions'
     }),
-    cookie: { maxAge: 1000 * 60 * 60 } // 1 hour
+    cookie: { maxAge: 1000 * 60 * 60 * 3} // 3 hours
 }));
 
 
@@ -82,6 +82,7 @@ app.get('/calendar',(req,res) => {
 });
 
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-})
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
