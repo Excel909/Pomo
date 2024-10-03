@@ -11,7 +11,8 @@
 .cal-head{
     width: 100%;
     height: 10vh;
-    box-shadow: 0px 0px 7px #ccc;
+    /* box-shadow: 0px 0px 7px #ccc; */
+    border-bottom: 1px solid #ccc;
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -44,6 +45,7 @@
 .cal-display{
     width: 25%;
     height: 100%;
+    position: relative;
     /* border-right: 1px solid #ccc; */
 }
 
@@ -76,11 +78,13 @@
     margin-top: 10px;
     gap: 10px;
     height: 300px;
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
 .cal-day{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 70px;
     border: 1px solid #ccc;
     text-align: center;
     display: flex;
@@ -107,12 +111,12 @@
     height:fit-content;
     justify-content: space-around;
     display: flex;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 #cal-prev,#cal-next{
-    width: 100px;
-    padding: 8px;
+    width: 120px;
+    padding: 10px;
     border: none;
     color: white;
     background-color: var(--background);
@@ -135,4 +139,16 @@
     margin-top: 15px;
     font-family: calibri;
     line-height: 1.5;
+}
+
+.prev-month-day{
+    color:#a09a9a;
+}
+
+.usp{
+    margin-top: 100px;
+    padding-left: 30px;
+    position: absolute;
+    bottom: 10px;
+    font-size: 10pt;
 }
