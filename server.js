@@ -30,7 +30,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://excellentayomide:excell@pomo.4swla.mongodb.net/Pomo',
+        mongoUrl: 'mongodb+srv://excellentayomide:excell@pomo.4swla.mongodb.net/Pomo?retryWrites=true&w=majority&ssl=true',
         collectionName: 'sessions'
     }),
     cookie: { maxAge: 1000 * 60 * 60 * 3} // 3 hours
