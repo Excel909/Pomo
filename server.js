@@ -9,6 +9,8 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const { Cookie } = require('express-session');
 const calendar = require('./routes/calendar.js');
+const sus = require('./routes/sign-up-success.js');
+const notification = require('./routes/notification.js');
 
 connectDB();
 const app = express();
@@ -65,6 +67,8 @@ app.get('/dashboard',(req,res) => {
     res.sendFile(dashboard_path);
 });
 
+// For sign up success page
+app.use('/',sus);
 
 // For login page
 app.get('/login',(req,res) => {
@@ -74,7 +78,6 @@ app.get('/login',(req,res) => {
 app.use('/',log_in);
 
 // for my calendar routing
-
 app.use('/',calendar);
 app.get('/calendar',(req,res) => {
     const calendar_path = path.join(__dirname,'views','calendar.html');
@@ -85,8 +88,15 @@ app.get('/calendar',(req,res) => {
 // For my settings routing
 
 app.get('/settings',(req,res) => {
-    const calendar_path = path.join(__dirname,'views','settings.html');
-    res.sendFile(calendar_path);
+    const settings_path = path.join(__dirname,'views','settings.html');
+    res.sendFile(settings_path);
+});
+
+// For my notifications
+app.use('/',notification);
+app.get('/notification',(req,res) => {
+    const notification_path = path.join(__dirname,'views','notification.html');
+    res.sendFile(notification_path);
 });
 
 

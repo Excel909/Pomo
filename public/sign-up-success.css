@@ -6,19 +6,60 @@
     font-family:var(--font-family);
     display: flex;
     line-height: 1.5;
+    overflow: hidden;
 }
 
+.cont-logo{
+    font-size: 20pt;
+    width: 100%;
+    text-align: left;
+}
+
+.c-l{
+    color: var(--background);
+}
+.cont-l{
+    width: 40%; 
+    height: 100%;
+    padding-top: 20px;
+    padding-left: 30px;
+    text-align: center;
+}
 .cont-r{
-    width: 50%;
+    width: 60%;
     height: 100%;
     background-color: #222;
 }
 
+.cont-pro{
+    width:fit-content;
+    margin: auto;
+    height: fit-content;
+}
+
+.cont-img{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+}
 .ss-head{
-    font-size: 30pt;
+    font-size: 20pt;
     font-family: calibri;
+    margin-top: 30px;
 }
 
 .ss-body{
     font-size: 11pt;
+    font-family: calibri;
+}
+
+.user{
+    color: var(--background);
+}
+
+.cont-back{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

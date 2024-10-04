@@ -1,10 +1,15 @@
 const path = require('path');
 
 module.exports = {
-  entry: './wbund/calender.js',  // Entry point of your app
+  entry: {
+    // calender:'./wbund/calender.js',
+    // dashboard:'./wbund/dashboard.js',
+    // signup:'./wbund/sign-up-success.js',
+    notification:'./wbund/notification.js'
+  },  
   output: {
-    filename: 'calender.js',  // Output file name
-    path: path.resolve(__dirname, 'dist'),  // Output directory
+    filename: '[name].js', 
+    path: path.resolve(__dirname, 'dist'),  
   },
-  mode: 'development',  // Set mode to development
+  mode: 'production', 
 };

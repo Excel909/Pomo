@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up Success</title>
-    <!-- Css files -->
-    <link rel="stylesheet" type="text/css" href="/sign-up-success.css">
+    <title>Notifications</title>
+    <link rel="stylesheet" type="text/css" href="/notification.css">
 
     <!-- For icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -19,31 +18,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="ss-cont">
-        <div class="cont-l">
-            <div class="cont-logo">
-                <span class="c-l"><i class="fa-solid fa-list-check"></i></span> POMO
-            </div>
-            <div class="cont-pro">
-                <div class="cpt">
-                    <img src="https://th.bing.com/th/id/OIP.zBrgGPBnaFMYQDohP6aIdQHaHa?pid=ImgDet&w=185&h=185&c=7" class="cont-img">
-                </div>
-            </div>
-            <div class="ss-head">
-                Account created successfully
-            </div>
-            <div class="ss-body">
-                Dr <span class="user"> user</span>&nbsp; Welcome to Pomo Task Manager...<br>
-
-                <a href="/login">Login</a>
+    <div id="container">
+        <div class="not-head">
+            <div class="not-logo">
+                <span class="ni"><i class="fa-solid fa-list-check"></i></span>&nbsp;Pomo - Notifications &nbsp;<div class="n-num"></div>
             </div>
         </div>
 
-        <div class="cont-r">
-            <img src="/success-pic.jpeg" class="cont-back" />
+        <div id="notify">
+           <!-- Notifications container -->
+            
+        </div>
+
+        <div class="bottom-nav">
+            <div class="bn">
+                <a href="/dashboard"><button class="bn-btn"><i class="fa-solid fa-home"></i></i></button></a>
+            </div>
+
+            <div class="bn">
+                <a href="/settings"><button class="bn-btn"><i class="fa-solid fa-gear"></i></i></button></a>
+            </div>
+
+            <div class="bn">
+                <a href="/calendar"><button class="bn-btn"><i class="fa-solid fa-calendar-days"></i></i></button></a>
+            </div>
         </div>
     </div>
 
-    <script src="/signup.js"></script>
+    <script src="/notification.js"></script>
 </body>
 </html>
