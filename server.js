@@ -32,8 +32,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        // mongoUrl: 'mongodb+srv://excellentayomide:excell@pomo.4swla.mongodb.net/Pomo?retryWrites=true&w=majority&ssl=true',
-        mongoUrl: 'mongodb://localhost:27017/Task_Manager',
+        mongoUrl: 'mongodb+srv://excellentayomide:excell@pomo.4swla.mongodb.net/Pomo?retryWrites=true&w=majority&ssl=true',
+        // mongoUrl: 'mongodb://localhost:27017/Task_Manager',
         collectionName: 'sessions'
     }),
     cookie: { maxAge: 1000 * 60 * 60 * 3} // 3 hours
