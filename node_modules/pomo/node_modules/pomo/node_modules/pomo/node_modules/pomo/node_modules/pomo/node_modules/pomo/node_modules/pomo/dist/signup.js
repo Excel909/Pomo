@@ -1,0 +1,1 @@
+window.onload=()=>{const e=document.querySelector(".user"),t=document.querySelector(".cont-img");fetch("user").then((e=>e.json())).then((o=>{e.innerHTML=o.user,t.setAttribute("src",`data:${o.ptype};base64,${o.profile}`)})).catch((e=>console.log(e.message)))};

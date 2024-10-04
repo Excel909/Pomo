@@ -1,0 +1,107 @@
+@import url('index-styler.css');
+
+#container{
+    padding: 10px;
+    overflow: hidden;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.not-head{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    font-family: var(--font-family);
+    font-size: 15pt;
+    border-bottom: 1px solid #ccc;
+    height: 10vh;
+    padding-left: 20px;
+}
+
+.not-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.n-num{
+    font-size: 13px;
+    background-color: #e0d3d3;
+    height: 40px;
+    padding: 7px;
+    border-radius: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ni{
+    color:var(--background);
+}
+
+#notify{
+    width: 100%;
+    height:80vh;
+    background-color:#f8f7f7;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    padding: 10px;
+}
+
+.notify-box{
+    width: 70%;
+    padding: 10px;
+    height: fit-content;
+    box-shadow: 0px 0px 5px #ccc;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-family: var(--font-family);
+}
+
+.n-title{
+    font-size: 15pt;
+    padding: 10px;
+    list-style-type:disc;
+    text-transform: capitalize;
+}
+
+.n-box{
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 11pt;
+}
+
+.n-color{
+    color: red;
+}
+
+.n-del{
+    width: 100px;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(211, 46, 46);
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.n-del:hover{
+    opacity: 0.9;
+}
+
+.ab-text{
+    font-size: 25pt;
+    font-family: var(--font-family);
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    text-align: center;
+    padding-top: 100px;
+    color: grey;
+}

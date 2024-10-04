@@ -1,0 +1,10 @@
+@import url("sign-up.css");
+
+.login_head{
+    font-family: var(--font-family);
+    width: 100%;
+    text-align: center;
+    font-size: 15pt;
+    /* font-weight: bold; */
+}
+
