@@ -33,6 +33,10 @@ const taskSchema = new mongoose.Schema({
     createdAt: { 
         type: Date, 
         default: Date.now
+    },
+    notified:{
+        type:Boolean,
+        default:false
     }
 });
 

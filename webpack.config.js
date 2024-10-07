@@ -3,9 +3,10 @@ const path = require('path');
 module.exports = {
   entry: {
     // calender:'./wbund/calender.js',
-    // dashboard:'./wbund/dashboard.js',
+    dashboard:'./wbund/dashboard.js',
+    setting:'/wbund/setting.js'
     // signup:'./wbund/sign-up-success.js',
-    notification:'./wbund/notification.js'
+    // notification:'./wbund/notification.js'
   },  
   output: {
     filename: '[name].js', 

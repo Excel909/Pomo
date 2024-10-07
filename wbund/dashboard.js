@@ -436,3 +436,12 @@ window.onload = () => {
     })
     .catch(err => console.log(err.message));
 };
+
+// window.onload = () => {
+//     fetch(`send-due-emails`)
+//     .then(response => response.json())
+//     .then(data => console.log(data.msg))
+//     .catch(err => err.message);
+// };
+
+

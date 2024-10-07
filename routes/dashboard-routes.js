@@ -5,6 +5,10 @@ const Task = require('../models/task');
 const app = express();
 const bodyParser = require('body-parser');
 const User = require('../models/user');
+const nodemailer = require('nodemailer');
+const cron = require('node-cron');
+require('dotenv').config();
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
@@ -235,6 +239,68 @@ router.get('/user-name',authorizer,async(req,res) => {
     }
 });
 
+
+
+// router.get('/send-due-emails', authorizer, async(req,res) => {
+//     const trans = nodemailer.createTransport({
+//         service: 'Gmail',
+//         auth: {
+//             user: process.env.EMAIL_USER,
+//             pass: process.env.EMAIL_PASS   
+//         }
+//     });
+    
+
+//     const sendMail = (to,subject,text) => {
+//         const mailDetails = {
+//             from:'excellentadejorin@gmail.com',
+//             to: to,
+//             subject:subject,
+//             text:text
+//         };
+
+//         trans.sendMail(mailDetails,(error,info) => {
+//             if (error) {
+//                 console.log('Error while sending email: ', error.message);
+//             } else {
+//                 console.log('Email sent: ' + info.response);
+//             }
+//         });
+//     }
+
+//     try{
+//         let userId = req.session.user.id;
+//         let userEmail = req.session.user.email;
+//         let currentDate = new Date();
+
+//         let dueTasks = await Task.find({
+//             user:userId,
+//             duedate:{$lte: currentDate},
+//             notified:false
+//         });
+
+//         const user = await User.findById(userId);
+
+//         let emailSubject = `Dr ${user.username} Some of your tasks are due (POMO)`;
+
+//         let emailText = `${user.username} your following tasks are due:\n`;
+
+//         dueTasks.forEach(due => {
+//             emailText += `- ${due.title}\n`;
+//         });
+
+//         if(dueTasks.length > 0){
+//             sendMail(userEmail, emailSubject, emailText);
+//             res.json({msg:'Notification Email Sent'});
+//         } else {
+//             res.json({ msg: 'No due tasks found' });
+//         }
+        
+//     } catch(err){
+//         res.status(500).send('server side error');
+//         console.log(err.message);
+//     }
+// });
 
 // Grace1213157
 
